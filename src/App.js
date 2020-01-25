@@ -1,12 +1,18 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
 import Dashboard from './components/Dashboard';
+import ConfigureStore from './store/store';
+
+const store = ConfigureStore();
 
 function App() {
   return (
-    <div className="App">
-      <Dashboard />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Dashboard />
+      </div>
+    </Provider>
   );
 }
 
